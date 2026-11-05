@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV y perfil profesional de VANN CRUZ, estudiante de Ingeniería en Comunicación Multimedia.">
+  <title>VANN CRUZ — Diseño multimedia</title>
+  <style>
+    :root {
+      --bg: #f4f3ef;
+      --paper: #fffefa;
+      --ink: #20211f;
+      --muted: #777871;
+      --line: #deded7;
+      --accent: #a7c6b2;
+      --dark: #202722;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    header {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav a:hover, .contact a:hover { color: #527a63; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .55fr .75fr;
+      gap: 42px;
+      padding: 104px 0 92px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 10px;
+      font-weight: 700;
+      color: #66816e;
+      margin: 0 0 22px;
+    }
+
+    h1 {
+      font-size: clamp(54px, 8vw, 104px);
+      line-height: .94;
+      letter-spacing: -.075em;
+      margin: 0;
+      font-weight: 750;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: #8eaa98;
+    }
+
+    .intro {
+      max-width: 440px;
+      margin: 28px 0 0;
+      font-size: 16px;
+      color: #5e605a;
+    }
+
+    /* BLOQUE DE FOTOGRAFÍA */
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      max-height: 340px;
+      border: 1px solid var(--line);
+      background: #e8e9e2;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait-placeholder {
+      padding: 24px;
+      text-align: center;
+      color: #778077;
+    }
+
+    .portrait-placeholder strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .portrait-placeholder span { font-size: 11px; }
+
+    .hero-side {
+      border-left: 1px solid var(--line);
+      padding: 6px 0 6px 28px;
+    }
+
+    .hero-side .label {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero-side p {
+      margin: 8px 0 24px;
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 11px;
+      color: #4c7057;
+    }
+
+    .status:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: #83aa8e;
+      border-radius: 50%;
+    }
+
+    .rule {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 0;
+    }
+
+    section { padding: 76px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 30px;
+      margin-bottom: 38px;
+    }
+
+    .section-no {
+      color: #819687;
+      font-size: 11px;
+      letter-spacing: .15em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(27px, 4vw, 42px);
+      letter-spacing: -.05em;
+      line-height: 1.1;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 18px 0 0;
+      color: #64665f;
+      font-size: 15px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .skill {
+      padding: 24px 24px 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill:nth-child(3n+2),
+    .skill:nth-child(3n) {
+      padding-left: 24px;
+      border-left: 1px solid var(--line);
+    }
+
+    .skill h3 { font-size: 15px; margin: 0 0 7px; }
+    .skill p { margin: 0; font-size: 12px; color: var(--muted); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .project {
+      min-height: 220px;
+      padding: 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project:nth-child(2) { background: #e8ede7; }
+    .project:nth-child(3) { background: #e8e6df; }
+
+    .project .tag {
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #69776b;
+    }
+
+    .project h3 {
+      font-size: 23px;
+      line-height: 1.12;
+      letter-spacing: -.04em;
+      max-width: 330px;
+      margin: 35px 0 10px;
+    }
+
+    .project p {
+      color: #666961;
+      font-size: 12px;
+      margin: 0;
+      max-width: 440px;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .timeline {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .timeline .date {
+      font-size: 10px;
+      color: #66816e;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .timeline h3 { margin: 8px 0 4px; font-size: 18px; }
+    .timeline p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .traits span {
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 7px 12px;
+      font-size: 11px;
+      color: #5d6059;
+    }
+
+    .contact-panel {
+      background: var(--dark);
+      color: #f5f5ef;
+      padding: 62px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: end;
+    }
+
+    .contact-panel .eyebrow { color: #a7c6b2; }
+
+    .contact-panel h2 {
+      max-width: 550px;
+      font-size: clamp(32px, 5vw, 56px);
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 13px;
+      color: #d1d7d0;
+    }
+
+    .contact a { display: block; margin-top: 8px; }
+
+    footer {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      header { height: 66px; }
+      .nav { gap: 14px; font-size: 10px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 76px 0 64px;
+      }
+
+      .portrait {
+        width: min(100%, 280px);
+        max-height: none;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding: 20px 0 0;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      section { padding: 58px 0; }
+
+      .skills { grid-template-columns: repeat(2, 1fr); }
+
+      .skill:nth-child(3n+2),
+      .skill:nth-child(3n) {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .skill:nth-child(even) {
+        padding-left: 16px;
+        border-left: 1px solid var(--line);
+      }
+
+      .projects, .bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .contact-panel {
+        padding: 34px 26px;
+        grid-template-columns: 1fr;
+      }
+
+      .contact { text-align: left; }
+
+      footer { gap: 14px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#inicio">VANN CRUZ</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#perfil">Perfil</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div>
+          <p class="eyebrow">Diseño visual · Multimedia · Movimiento</p>
+          <h1>VANN <span>CRUZ.</span></h1>
+          <p class="intro">
+            Estudiante de Ingeniería en Comunicación Multimedia.
+            Desarrollo ideas a través del diseño visual, la animación
+            y la comunicación audiovisual.
+          </p>
+        </div>
+
+        <!-- BLOQUE PARA TU FOTO -->
+        <div class="portrait">
+          <!-- Guarda tu foto como foto-perfil.jpg en la misma carpeta que index.html.
+               Luego elimina el comentario de la etiqueta img y borra el placeholder. -->
+          <!-- <img src="foto-perfil.jpg" alt="Fotografía de perfil de VANN CRUZ"> -->
+
+          <div class="portrait-placeholder">
+            <strong>Tu fotografía</strong>
+            <span>Reemplaza este espacio con tu foto de perfil</span>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <span class="label">Enfoque actual</span>
+          <p>Diseño multimedia, animación 2D y 3D, edición audiovisual y contenido publicitario.</p>
+
+          <span class="label">Ubicación</span>
+          <p>Ecatepec de Morelos, Estado de México</p>
+
+          <span class="status">En búsqueda de prácticas profesionales</span>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <hr class="rule">
+
+  <div class="wrap">
+    <section id="perfil">
+      <div class="section-head">
+        <span class="section-no">01 / PERFIL</span>
+        <div>
+          <h2>Ideas visuales con intención.</h2>
+          <p class="lead">
+            Me interesa integrar creatividad y herramientas digitales para
+            comunicar ideas mediante piezas gráficas y audiovisuales.
+            Cuento con conocimientos en composición, diseño vectorial,
+            modelado 3D, animación y edición de video. Busco realizar
+            prácticas profesionales donde pueda aplicar lo aprendido,
+            colaborar con un equipo y seguir desarrollando mis capacidades.
+          </p>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <div class="timeline">
+          <span class="date">2024 — Actualmente</span>
+          <h3>Ingeniería en Comunicación Multimedia</h3>
+          <p>Universidad Estatal del Valle de Ecatepec (UNEVE)</p>
+        </div>
+
+        <div class="timeline">
+          <span class="date">Idiomas</span>
+          <h3>Español · Inglés intermedio</h3>
+          <p>Comunicación y comprensión en contextos académicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="habilidades">
+      <div class="section-head">
+        <span class="section-no">02 / HABILIDADES</span>
+        <div>
+          <h2>Herramientas y disciplinas.</h2>
+          <p class="lead">
+            Conocimientos técnicos desarrollados en proyectos académicos
+            y práctica independiente.
+          </p>
+        </div>
+      </div>
+
+      <div class="skills">
+        <article class="skill">
+          <h3>Blender</h3>
+          <p>Nivel intermedio · Modelado y escenas 3D</p>
+        </article>
+        <article class="skill">
+          <h3>Adobe Illustrator</h3>
+          <p>Diseño vectorial, ilustración y composición</p>
+        </article>
+        <article class="skill">
+          <h3>Adobe Animate</h3>
+          <p>Conocimientos de animación 2D</p>
+        </article>
+        <article class="skill">
+          <h3>Edición de video</h3>
+          <p>Nivel intermedio · Edición y montaje</p>
+        </article>
+        <article class="skill">
+          <h3>Autodesk Maya</h3>
+          <p>Conocimientos académicos de entorno 3D</p>
+        </article>
+        <article class="skill">
+          <h3>Comunicación audiovisual</h3>
+          <p>Concepto visual, narrativa y storyboard</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="proyectos">
+      <div class="section-head">
+        <span class="section-no">03 / PROYECTOS</span>
+        <div>
+          <h2>Trabajo académico y exploración creativa.</h2>
+          <p class="lead">
+            Una selección de ejercicios y propuestas desarrolladas durante
+            mi formación. No representan encargos comerciales.
+          </p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <span class="tag">Diseño de producto · Proyecto conceptual</span>
+          <div>
+            <h3>Etiquetas para una bebida ficticia</h3>
+            <p>
+              Propuesta gráfica de presentación para un producto conceptual,
+              con exploración de identidad visual, composición y diseño de etiquetas.
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="tag">Narrativa audiovisual · Storyboard</span>
+          <div>
+            <h3>Academia de danza tradicional mexicana</h3>
+            <p>
+              Planeación de una secuencia publicitaria mediante escenas,
+              encuadres y recursos visuales para comunicar la propuesta de una academia.
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="tag">Diseño multimedia · Formación universitaria</span>
+          <div>
+            <h3>Proyectos de comunicación visual</h3>
+            <p>
+              Desarrollo de propuestas gráficas y digitales aplicando
+              principios de diseño, composición y comunicación visual.
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="tag">Forma de trabajo</span>
+          <div>
+            <h3>Observar. Conceptualizar. Construir.</h3>
+            <p>
+              Interés por llevar una idea desde su planteamiento visual
+              hasta una pieza clara, cuidada y funcional.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <div class="section-head">
+        <span class="section-no">04 / COMPETENCIAS</span>
+        <div>
+          <h2>Cómo trabajo.</h2>
+          <p class="lead">
+            Me caracterizo por la atención a la composición visual,
+            la disposición para aprender y el interés por resolver problemas
+            de comunicación desde distintas herramientas.
+          </p>
+
+          <div class="traits">
+            <span>Creatividad</span>
+            <span>Pensamiento visual</span>
+            <span>Atención al detalle</span>
+            <span>Aprendizaje continuo</span>
+            <span>Adaptabilidad</span>
+            <span>Trabajo en equipo</span>
+            <span>Organización de proyectos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" style="padding-top: 12px;">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Prácticas profesionales</p>
+          <h2>Convirtamos ideas en comunicación visual.</h2>
+        </div>
+
+        <div class="contact">
+          <span>Contacto</span>
+          <a href="mailto:gioortega48@gmail.com">gioortega48@gmail.com</a>
+          <a href="tel:+525643759837">56 4375 9837</a>
+          <a href="#inicio">Volver al inicio ↑</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 VANN CRUZ</span>
+      <span>Ecatepec de Morelos, Estado de México</span>
+      <span>Perfil profesional · CV</span>
+    </footer>
+  </div>
+</body>
+</html>
